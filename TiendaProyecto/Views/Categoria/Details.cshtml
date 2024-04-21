@@ -1,0 +1,48 @@
+﻿@model TiendaProyecto.Models.Categoria
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Categoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="font-family: 'Jost', sans-serif;">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <strong>@Html.DisplayNameFor(model => model.nombre)</strong>
+                    <br />
+                    @Html.DisplayFor(model => model.nombre)
+                </div>
+                <div class="form-group">
+                    <strong>@Html.DisplayNameFor(model => model.descripcion)</strong>
+                    <br />
+                    @Html.DisplayFor(model => model.descripcion)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-2">
+        <a asp-action="Edit" asp-route-id="@Model?.idCategoria" class="btn btn-primary">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Ir atrás</a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+

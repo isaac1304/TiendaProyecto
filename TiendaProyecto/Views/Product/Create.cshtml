@@ -1,0 +1,50 @@
+﻿@model TiendaProyecto.Models.Product
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="font-family: 'Jost', sans-serif;">
+    <div class="container mt-5">
+        <h2 class="text-center">Crear Producto</h2>
+    </div>
+    <div class="container mt-4">
+        @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <label for="Name">Nombre</label>
+                <input type="text" class="form-control" id="Name" name="Name" placeholder="Nombre del producto" required>
+            </div>
+            <div class="form-group">
+                <label for="Description">Descripción</label>
+                <textarea class="form-control" id="Description" name="Description" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="Price">Precio</label>
+                <input type="number" class="form-control" id="Price" name="Price" placeholder="Precio del producto" required>
+            </div>
+            <div class="form-group">
+                <label for="Category">Categoría</label>
+                @Html.DropDownListFor(model => model.Category, (SelectList)ViewBag.CategoryList, "Selecciona una categoría", new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="imageUpload">Subir imagen</label>
+                <input type="file" class="form-control-file" id="imageUpload" name="imageUpload">
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+            <a asp-action="Index" class="btn btn-secondary">Volver</a>
+        }
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

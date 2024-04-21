@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Carrito";
+}
+
+<h1>Carrito</h1>
+
+@model IEnumerable<TiendaProyecto.Models.ItemCarrito>
+
+
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Product.Name</td>
+            <td>@item.Precio</td>
+            <td>@item.Cantidad</td>
+            <td>@(item.Precio * item.Cantidad)</td>
+        </tr>
+    }
+
+    <tr>
+        <td colspan="3"><strong>Total General:</strong></td>
+        <td><strong>@Model.Sum(i => i.Precio * i.Cantidad)</strong></td>
+    </tr>
+</table>
+
+<div>
+    @Html.ActionLink("Continuar Comprando", "Index", "Home", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Realizar Pedido", "Checkout", "Cart", null, new { @class = "btn btn-success" })
+</div>
