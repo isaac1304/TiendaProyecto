@@ -4,10 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TiendaProyecto.Models;
 using Microsoft.EntityFrameworkCore;
 using TiendaProyecto.Migrations;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Http;
-using System.Collections.Generic;
-using System.Diagnostics;
+
 
 namespace TiendaProyecto.Controllers
 {
