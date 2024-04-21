@@ -3,7 +3,6 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TiendaProyecto.Models;
 using Microsoft.EntityFrameworkCore;
-using TiendaProyecto.Migrations;
 
 
 namespace TiendaProyecto.Controllers
